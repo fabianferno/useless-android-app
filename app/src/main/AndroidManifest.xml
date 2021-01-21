@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.useless_android_app">
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,11 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uselessandroidapp">
-        <activity android:name=".SignPage"></activity>
-        <activity android:name=".RegPage" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Logs"></activity>
+        <activity android:name=".SMSCustomer" />
+        <activity android:name=".SalesLogForm">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
