@@ -15,14 +15,15 @@ public class SignPage extends AppCompatActivity {
     EditText name;
     EditText pwd;
     Button log;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_page);
-        head=findViewById(R.id.textView3);
-        name=findViewById(R.id.editTextTextPersonName6);
-        pwd=findViewById(R.id.editTextTextPassword);
-        log=findViewById(R.id.button5);
+        head = findViewById(R.id.textView3);
+        name = findViewById(R.id.editTextTextPersonName6);
+        pwd = findViewById(R.id.editTextTextPassword);
+        log = findViewById(R.id.button5);
 
         log.setOnClickListener(new View.OnClickListener() {
             @Override

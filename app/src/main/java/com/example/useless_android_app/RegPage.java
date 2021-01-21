@@ -33,9 +33,9 @@ public class RegPage extends AppCompatActivity {
 
 
     public void save(View view) {
-        SmsManager smsManager =  SmsManager.getDefault();
+        SmsManager smsManager = SmsManager.getDefault();
 
-        smsManager.sendTextMessage(number,null,"Congrats! Registered successfully!!",null,null); //we need to add permission in manifest file to send sms
+        smsManager.sendTextMessage(number, null, "Congrats! Registered successfully!!", null, null); //we need to add permission in manifest file to send sms
 
         Toast.makeText(this, "Sms Send successfully!", Toast.LENGTH_SHORT).show();
     }

@@ -63,48 +63,54 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        sp=findViewById(R.id.spinner);
+        sp = findViewById(R.id.spinner);
 
-        sp1=findViewById(R.id.spinner2);
-        name=findViewById(R.id.editTextTextPersonName);
-        roll=findViewById(R.id.editTextTextPersonName2);
-        phn=findViewById(R.id.editTextTextPersonName3);
-        grp=findViewById(R.id.editTextTextPersonName5);
-        submit=findViewById(R.id.button2);
-        signin=findViewById(R.id.button3);
-        agree=findViewById(R.id.checkBox);
+        sp1 = findViewById(R.id.spinner2);
+        name = findViewById(R.id.editTextTextPersonName);
+        roll = findViewById(R.id.editTextTextPersonName2);
+        phn = findViewById(R.id.editTextTextPersonName3);
+        grp = findViewById(R.id.editTextTextPersonName5);
+        submit = findViewById(R.id.button2);
+        signin = findViewById(R.id.button3);
+        agree = findViewById(R.id.checkBox);
 
         mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.notification);
 
-        eddob= findViewById(R.id.editTextTextPersonName4);
+        eddob = findViewById(R.id.editTextTextPersonName4);
 
         radioGroup = findViewById(R.id.radiogroup);
 
-        arrayList=new ArrayList();
+        arrayList = new ArrayList();
 
-        arrayList1=new ArrayList();
-
-
-
-        arrayList.add("Select Year"); arrayList.add("1"); arrayList.add("2"); arrayList.add("3"); arrayList.add("4");
-
-        arrayList1.add("Select Dept"); arrayList1.add("IT"); arrayList1.add("EEE"); arrayList1.add("ECE"); arrayList1.add("MECH");
+        arrayList1 = new ArrayList();
 
 
+        arrayList.add("Select Year");
+        arrayList.add("1");
+        arrayList.add("2");
+        arrayList.add("3");
+        arrayList.add("4");
 
-        arrayAdapter=
+        arrayList1.add("Select Dept");
+        arrayList1.add("IT");
+        arrayList1.add("EEE");
+        arrayList1.add("ECE");
+        arrayList1.add("MECH");
+
+
+        arrayAdapter =
 
                 new ArrayAdapter(MainActivity.this,
 
-                        android.R.layout.simple_list_item_1,arrayList);
+                        android.R.layout.simple_list_item_1, arrayList);
 
         sp.setAdapter(arrayAdapter);
 
-        arrayAdapter1=
+        arrayAdapter1 =
 
                 new ArrayAdapter(MainActivity.this,
 
-                        android.R.layout.simple_list_item_1,arrayList1);
+                        android.R.layout.simple_list_item_1, arrayList1);
 
         sp1.setAdapter(arrayAdapter1);
 
@@ -113,31 +119,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 int i = radioGroup.getCheckedRadioButtonId();
-                switch (i){
+                switch (i) {
                     case R.id.radioButton2:
-                        s1="male";
+                        s1 = "male";
                         break;
 
                     case R.id.radioButton:
-                        s1="female";
+                        s1 = "female";
                         break;
                 }
 
                 boolean st = agree.isChecked();
-                if (st){
-                    s=name.getText().toString() + "\n" + roll.getText().toString() + "\n"+ phn.getText().toString()+ "\n"+s1+"\n"+grp.getText().toString() ;
-                    Intent an = new Intent(MainActivity.this,RegPage.class);
-                    an.putExtra("key",s);
+                if (st) {
+                    s = name.getText().toString() + "\n" + roll.getText().toString() + "\n" + phn.getText().toString() + "\n" + s1 + "\n" + grp.getText().toString();
+                    Intent an = new Intent(MainActivity.this, RegPage.class);
+                    an.putExtra("key", s);
                     startActivity(an);
                     Toast.makeText(MainActivity.this, "Next page Activated!", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(MainActivity.this, "Agree Terms and Condition!", Toast.LENGTH_SHORT).show();
                     new AlertDialog.Builder(MainActivity.this)//for alert message
                             .setTitle("Alert!")
                             .setMessage("Agree Terms and Condition!")
                             .setPositiveButton("Okayyy!", null)
-                            .setNegativeButton("No",null)
+                            .setNegativeButton("No", null)
                             .show();
                     mediaPlayer.start();
                 }
@@ -147,27 +152,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 s2 = phn.getText().toString();
-                Intent ob = new Intent(MainActivity.this,SignPage.class);
+                Intent ob = new Intent(MainActivity.this, SignPage.class);
                 startActivity(ob);
             }
         });
 
 
-
-
     }
-
 
 
     public void dat(View view) {
 
-        DatePickerDialog datePickerDialog  = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
 
             @Override
 
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
 
-                eddob.setText(i+"/"+i1+"/"+i2);
+                eddob.setText(i + "/" + i1 + "/" + i2);
 
                 eddob.setEnabled(false);
 
