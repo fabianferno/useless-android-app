@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SalesLogForm">
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:orientation="vertical"
+
+            android:padding="40dp">
+
+
+            <ImageView
+                android:id="@+id/logo_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:outlineAmbientShadowColor="@color/black"
+                android:paddingBottom="50dp"
+                app:srcCompat="@drawable/organic_food_logo" />
+
+            <EditText
+
+                android:id="@+id/textViewCustomerName"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:ems="10"
+
+                android:gravity="center_horizontal"
+                android:hint="Name of the Customer"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+
+            <EditText
+
+                android:id="@+id/textViewCustomerNumber"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:ems="10"
+
+                android:gravity="center_horizontal"
+
+                android:hint="Mobile No."
+                android:inputType="number"
+                android:textAlignment="center" />
+
+
+            <EditText
+
+                android:id="@+id/textViewSales"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:ems="10"
+
+                android:gravity="center_horizontal"
+
+                android:hint="Total Sale"
+                android:inputType="textPersonName"
+                android:textAlignment="center" />
+
+
+            <TextView
+
+                android:id="@+id/dateLabel"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:gravity="center_horizontal"
+                android:paddingTop="30sp"
+                android:text="Select the Date of Sale"
+                android:textAlignment="center"
+                android:textColor="#000" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:layout_margin="5dp"
+
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/textViewDate"
+
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:ems="10"
+
+                    android:gravity="center_horizontal"
+
+                    android:hint="Sold on DD-MM-YYYY"
+
+                    android:inputType="date"
+                    android:textAlignment="center" />
+
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="showDatePicker"
+                    android:text="Choose"
+                    app:backgroundTint="#4CAF50" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/regionLabel"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:gravity="center_horizontal"
+
+                android:paddingTop="30sp"
+
+                android:text="Choose Region"
+
+
+                android:textColor="#000" />
+
+
+            <Spinner
+                android:id="@+id/regionSpinner"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:minHeight="50dp" />
+
+
+            <RadioGroup
+                android:id="@+id/typeOfCustomerRadioGroup"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:paddingHorizontal="120sp">
+
+
+                <RadioButton
+
+
+                    android:id="@+id/homeCustomer"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Home" />
+
+
+                <RadioButton
+
+                    android:id="@+id/commercialCustomer"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Commercial" />
+
+            </RadioGroup>
+
+
+            <CheckBox
+                android:id="@+id/agreeCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="50dp"
+
+                android:gravity="end"
+
+                android:paddingHorizontal="20dp"
+
+                android:text="*Authorize as a Legit Sales Person"
+                android:textAlignment="viewEnd" />
+
+
+            <Button
+
+                android:id="@+id/submitButton"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:text="Submit" />
+
+
+            <Button
+
+                android:id="@+id/callCustomerButtom"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+
+                android:text="Call Customer" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
